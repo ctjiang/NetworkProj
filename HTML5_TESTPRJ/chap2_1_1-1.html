@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 Canvas</title>
+	<style>
+		html, body {
+			margin: 0; /* remove margin */
+			padding: 0; /* remove padding */
+		}
+		canvas {
+			display: block; /* change canvas element to block box */
+		}
+	</style>
+</head>
+<body>
+	<canvas id="_2DCanvas" width="300" height="150" style="border:1px dashed #c3c3c3;">
+	Show this line if browser don't support canvas element
+	</canvas>
+	<script>
+	// web page loaded event handler
+	window.onload=function()
+	{
+		// 1. get canvas element reference
+		var canvas = document.getElementById("_2DCanvas");
+		
+		// 2. create CanvasRenderingContext2D object and check it is usable first
+		if(canvas && canvas.getContext) 
+		{
+			var cxt = canvas.getContext("2d");
+			
+			// 3. begin drawing
+			cxt.fillStyle="#FF0000";	// define fill color
+			cxt.fillRect(0,0,150,75);	// draw rectangle
+		}
+	};
+	</script>
+</body>
+</html>

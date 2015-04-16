@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 Canvas</title>
+	<style>
+		html, body {
+			margin: 0; /* remove margin */
+			padding: 0; /* remove padding */
+		}
+		canvas {
+			display: block; /* change canvas element to block box */
+		}
+	</style>
+</head>
+<body>
+	<canvas id="_2DCanvas" >
+	Show this line if browser don't support canvas element
+	</canvas>
+	<script>
+	// web page loaded event handler
+	window.onload=function()
+	{
+		resizeCanvas();
+		
+		var canvas = document.getElementById("_2DCanvas");
+		if(canvas && canvas.getContext)
+		{
+			var cxt = canvas.getContext("2d");
+			cxt.fillStyle="#FF0000"; // define fill color
+			cxt.fillRect(0, 0, canvas.width, canvas.height); // fill rectangle with color
+		}
+	};
+	
+	// change canvas size function
+	function resizeCanvas()
+	{
+		var canvas = document.getElementById("_2DCanvas");
+		canvas.setAttribute("width", window.innerWidth); // change width
+		canvas.setAttribute("height", window.innerHeight); // change height
+	}
+	
+	// invoke resizeCanvas function when window size changed
+	window.onresize = resizeCanvas;
+	</script>
+</body>
+</html>
