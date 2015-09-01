@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="_2DCanvas" width="300" height="150" style="border:1px dashed #c3c3c3;">
+If Browser cannot support Canvas element, this line would be displayed
+</canvas>
+<object type="image/png" id="myImage" style="border:1px dashed #c3c3c3;">
+</object>
+<script>
+// Web page load completed
+window.onload=function()
+{
+	var canvas = document.getElementById("_2DCanvas");
+	if(canvas && canvas.getContext)
+	{
+		var cxt = canvas.getContext("2d");
+		cxt.fillStyle = 'rgb(0,0,255)'; // define fill color - blue
+		cxt.fillRect(10, 10, 100, 100); // draw first rectangle
+		
+		cxt.fillStyle = 'rgba(0,255,0,0.5)'; // define fill color - green
+		cxt.fillRect(20,20,100,100); // draw second rectangle
+		
+		cxt.fillStyle = 'rgba(255,0,0,0.25)'; // define fill color - red
+		cxt.fillRect(30,30,100,100); // draw third rectangle
+	}
+};
+</script>
+</body>
+</html>
