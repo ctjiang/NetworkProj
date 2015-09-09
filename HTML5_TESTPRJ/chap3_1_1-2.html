@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="_2DCanvas" width="300" height="150" style="border:1px dashed #c3c3c3;">
+If Browser cannot support Canvas element, this line would be displayed
+</canvas>
+<object type="image/png" id="myImage" style="border:1px dashed #c3c3c3;">
+</object>
+<script>
+// Web page load completed
+window.onload=function()
+{
+	var canvas = document.getElementById("_2DCanvas");
+	if(canvas && canvas.getContext)
+	{
+		var cxt = canvas.getContext("2d");
+		// create linear gradient
+		var gid = cxt.createLinearGradient(0,0,150,75);
+		// add 2 color stops to this linear gradient
+		gid.addColorStop(0,"#FF0000"); //Read color stop
+		gid.addColorStop(1,"#00FF00"); //Green color stop
+		cxt.fillStyle=gid; // Assign linear gradient fill style
+		cxt.fillRect(0,0,150,75); //Draw rectangle
+	}
+};
+</script>
+</body>
+</html>
