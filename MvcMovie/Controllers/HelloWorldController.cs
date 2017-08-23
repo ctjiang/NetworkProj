@@ -17,15 +17,21 @@ namespace MvcMovie.Controllers
         //GET: /HelloWorld/Welcome?name=&numTimes=
         // Requires using Sytem.Text.Encodings.Web
         //public string Welcome(string name, int numTimes = 1)
-        //{
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
             //return "This is the Welcome action method...";
-        //    return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
-        //}
+            //return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+
+            return View();
+        }
 
         //GET: /HelloWorld/Welcome/id?name=
-        public string Welcome(string name, int ID = 1)
-        {
-            return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
-        }
+        // public string Welcome(string name, int ID = 1)
+        // {
+        //     return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
+        // }
     }
 }
