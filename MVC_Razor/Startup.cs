@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RazorPagesMovie.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MVC_Razor
 {
@@ -21,6 +23,8 @@ namespace MVC_Razor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MovieContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("MovieContext")));
             services.AddMvc();
         }
 
