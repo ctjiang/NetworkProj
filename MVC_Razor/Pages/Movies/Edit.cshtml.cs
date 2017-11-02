@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Models;
+using MVC_Razor.Models;
 
-namespace RazorPagesMovie.Pages.Movies
+namespace MVC_Razor.Pages.Movies
 {
     public class EditModel : PageModel
     {
-        private readonly RazorPagesMovie.Models.MovieContext _context;
+        private readonly MVC_Razor.Models.MovieContext _context;
 
-        public EditModel(RazorPagesMovie.Models.MovieContext context)
+        public EditModel(MVC_Razor.Models.MovieContext context)
         {
             _context = context;
         }

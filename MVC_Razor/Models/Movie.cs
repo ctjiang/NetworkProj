@@ -1,6 +1,6 @@
 using System;
 
-namespace RazorPagesMovie.Models
+namespace MVC_Razor.Models
 {
     public class Movie
     {
