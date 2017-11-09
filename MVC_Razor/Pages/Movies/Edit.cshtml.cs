@@ -53,7 +53,12 @@ namespace MVC_Razor.Pages.Movies
             }
             catch (DbUpdateConcurrencyException)
             {
-                
+                if(!_context.Movies.Any(e => e.ID == Movie.ID))
+                {
+                    return NotFound();
+                }
+                else
+                    throw;
             }
 
             return RedirectToPage("./Index");
